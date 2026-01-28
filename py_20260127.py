@@ -89,13 +89,13 @@ def outlier_analyze(x):
     #locates/displays the rows that are upperOutlier aka when the upperOutlier is true/1
     df.loc[upperOutlier == 1, : ]
 
-    winsorize = {
+    winsorize = (
         upperOutlier * upperWhisker + #map upper outliers to upper whisker
         
         lowerOutlier * lowerWhisker + #map lower outliers to lower whisker
         
         (1 - outlier) * x #if neither, keep original value
-    }
+    )
 
     return outlier, winsorize
 
