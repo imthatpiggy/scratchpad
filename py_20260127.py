@@ -31,6 +31,7 @@ def download_data(force=False):
         print("Extracting data files...")
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(data_dir)
+
         print("Data extracted")
     
     return data_dir
